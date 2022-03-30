@@ -2,20 +2,20 @@ public class Pessoa {
     private String nome; 
     private String endereço; 
     private String telefone; 
-    private String cep; 
+    private String CEP; 
     private String cidade;
-    private String uf;
+    private String UF;
         
     private final int MAXIMO_DIGITOS_CEP = 8;
-    private final int MAXIMO_CARACTERES_UF = 2;
+    private final int TAMANHO_CARACTERES_UF = 2;
     
-    public Pessoa(String nome, String endereço, String telefone, String cep, String cidade, String uf) {
+    public Pessoa(String nome, String endereço, String telefone, String CEP, String cidade, String UF) {
         this.nome = nome;
         this.endereço = endereço;
         this.telefone = telefone;
-        setCep(cep);
+        setCep(CEP);
         this.cidade = cidade;
-        setUF(uf);
+        setUF(UF);
     }
 
     public String getNome() {
@@ -31,12 +31,12 @@ public class Pessoa {
     }
 
     public String getCep() {
-        return cep;
+        return CEP;
     }
 
-    private void setCep(String cep) {
-        if(cep.length() <= MAXIMO_DIGITOS_CEP) {
-            this.cep = cep;
+    private void setCep(String CEP) {
+        if(CEP.length() == MAXIMO_DIGITOS_CEP) {
+            this.CEP = CEP;
         }
     }
 
@@ -45,12 +45,12 @@ public class Pessoa {
     }
 
     public String getUF() {
-        return uf;
+        return UF;
     }
 
-    private void setUF(String uf) {
-        if(uf.length() <= MAXIMO_CARACTERES_UF) {
-            this.uf = uf;
+    private void setUF(String UF) {
+        if(UF.length() == TAMANHO_CARACTERES_UF) {
+            this.UF = UF;
         }
     }
 }
